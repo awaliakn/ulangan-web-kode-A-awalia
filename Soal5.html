@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mengubah Kalimat dengan DOM</title>
+  <style>
+    body {
+      background-color: white;
+      transition: background-color 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="kalimat" onclick="ubahKalimat()">Saya merasa belum bisa belajar javascript</p>
+
+  <script>
+    function ubahKalimat() {
+      // Ambil elemen dengan id "kalimat"
+      let kalimatElement = document.getElementById("kalimat");
+
+      // Ubah teks kalimat
+      kalimatElement.innerText = "Ternyata saya masih kurang berlatih belajar javascript";
+
+      // Ubah warna background menjadi hijau
+      document.body.style.backgroundColor = "green";
+    }
+  </script>
+
+</body>
+</html>

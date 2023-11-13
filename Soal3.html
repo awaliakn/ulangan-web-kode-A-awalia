@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Negara</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Negara</h1>
+    
+    <ul id="daftarNegara"></ul>
+
+    <button onclick="tampilkanData()">Tampilkan Data Negara</button>
+    <button onclick="tambahNegara()">Tambah Negara</button>
+
+    <script>
+        // Membuat array negara
+        var negara = ["Indonesia", "Malaysia", "Singapura", "Thailand", "Vietnam", "Filipina", "Brunei", "Myanmar", "Kamboja", "Laos"];
+
+        // Fungsi untuk menampilkan seluruh data negara
+        function tampilkanData() {
+            var daftarNegaraElement = document.getElementById("daftarNegara");
+            // Menghapus elemen-elemen sebelumnya untuk mencegah tampilan ganda
+            daftarNegaraElement.innerHTML = "";
+
+            console.log("Data Negara:");
+            for (var i = 0; i < negara.length; i++) {
+                console.log((i + 1) + ". " + negara[i]);
+
+                // Menambahkan elemen li ke daftar negara pada tampilan HTML
+                var listItem = document.createElement("li");
+                listItem.textContent = negara[i];
+                daftarNegaraElement.appendChild(listItem);
+            }
+
+            // Mengakses nilai "Indonesia" dan menampilkan indeksnya
+            var indexIndonesia = negara.indexOf("Indonesia");
+            console.log("Indonesia berada pada indeks ke-" + indexIndonesia);
+        }
+
+        // Fungsi untuk menambah negara menggunakan metode push
+        function tambahNegara() {
+            var negaraBaru = prompt("Masukkan nama negara baru:");
+
+            // Memastikan input tidak kosong sebelum menambahkan
+            if (negaraBaru !== null && negaraBaru !== "") {
+                negara.push(negaraBaru);
+                console.log("Negara baru berhasil ditambahkan: " + negaraBaru);
+
+                // Menampilkan data setelah penambahan negara
+                tampilkanData();
+            } else {
+                console.log("Input negara baru dibatalkan atau kosong.");
+            }
+        }
+    </script>
+</body>
+</html>
